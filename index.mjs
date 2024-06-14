@@ -4,8 +4,11 @@ export const handler = async(event) => {
 
     log('event :' + JSON.stringify(event));
 
-    return { 
+    return {
         statusCode: 200,
-        body: JSON.stringify(event),
+        body: `<html><body>Dados da requisicao ${JSON.stringify(event)}</body></html>`,
+        headers: {
+            "content-type": "text/html"
+        }
     };
 };
